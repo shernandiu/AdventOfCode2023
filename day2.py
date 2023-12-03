@@ -24,7 +24,7 @@ for line in text.splitlines():
         cubes[color] = max(cubes.get(color, 0), int(num))
     games.append(cubes)
 
-p1 = sum(i+1 for i, game in enumerate(games) if all(game.get(color) <= avail_cubes[color] for color in avail_cubes))
+p1 = sum(i+1 for i, game in enumerate(games) if all(game.get(color) <= quantity for color, quantity in avail_cubes.items()))
 print("Part 1:", p1)
 
 # Part 2
